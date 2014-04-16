@@ -1,12 +1,13 @@
 //
-//  MyBaseClass.h
+//  myUncalledClass.m
 //  SIngleObjectPrelink Demo
 //
 //  Created by Jonathan Mitchell on 16/04/2014.
 //  Copyright (c) 2014 Mugginsoft. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "myUncalledClass.h"
 
-@interface MyBaseClass : NSObject
+@implementation myUncalledClass
+
 @end

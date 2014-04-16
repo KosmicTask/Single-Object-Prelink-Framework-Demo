@@ -22,17 +22,10 @@
 		AB65B9C718FE928600115323 /* MyBaseClass.h in Headers */ = {isa = PBXBuildFile; fileRef = AB65B97218FE921A00115323 /* MyBaseClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB65B9CB18FE936800115323 /* MyFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB65B97D18FE925600115323 /* MyFramework.framework */; };
 		AB65B9CE18FE946D00115323 /* MySubClass.h in Headers */ = {isa = PBXBuildFile; fileRef = AB65B97518FE923400115323 /* MySubClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB65B9D818FEA7A800115323 /* myUncalledClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AB65B9D618FEA7A800115323 /* myUncalledClass.m */; };
+		AB65B9D918FEA7B600115323 /* myUncalledClass.h in Headers */ = {isa = PBXBuildFile; fileRef = AB65B9D518FEA7A800115323 /* myUncalledClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABB8A24118FEAA4700213B80 /* libMyLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB65B9A518FE926800115323 /* libMyLibrary.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AB65B9CC18FE938100115323 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB65B93318FE91EE00115323 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB65B97C18FE925600115323;
-			remoteInfo = MyFramework;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB65B93B18FE91EE00115323 /* SIngleObjectPrelink Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SIngleObjectPrelink Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +53,8 @@
 		AB65B98518FE925700115323 /* MyFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFramework-Prefix.pch"; sourceTree = "<group>"; };
 		AB65B9A518FE926800115323 /* libMyLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB65B9A918FE926800115323 /* MyLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		AB65B9D518FEA7A800115323 /* myUncalledClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUncalledClass.h; sourceTree = "<group>"; };
+		AB65B9D618FEA7A800115323 /* myUncalledClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUncalledClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB8A24118FEAA4700213B80 /* libMyLibrary.a in Frameworks */,
 				AB65B97E18FE925600115323 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +178,8 @@
 				AB65B97518FE923400115323 /* MySubClass.h */,
 				AB65B97618FE923400115323 /* MySubClass.m */,
 				AB65B9A818FE926800115323 /* Supporting Files */,
+				AB65B9D518FEA7A800115323 /* myUncalledClass.h */,
+				AB65B9D618FEA7A800115323 /* myUncalledClass.m */,
 			);
 			path = MyLibrary;
 			sourceTree = "<group>";
@@ -201,6 +199,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB65B9D918FEA7B600115323 /* myUncalledClass.h in Headers */,
 				AB65B9CE18FE946D00115323 /* MySubClass.h in Headers */,
 				AB65B9C718FE928600115323 /* MyBaseClass.h in Headers */,
 			);
@@ -262,7 +261,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AB65B9CD18FE938100115323 /* PBXTargetDependency */,
 			);
 			name = MyLibrary;
 			productName = MyLibrary;
@@ -343,19 +341,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB65B9D818FEA7A800115323 /* myUncalledClass.m in Sources */,
 				AB65B9C518FE927700115323 /* MySubClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB65B9CD18FE938100115323 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB65B97C18FE925600115323 /* MyFramework */;
-			targetProxy = AB65B9CC18FE938100115323 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB65B94718FE91EE00115323 /* InfoPlist.strings */ = {
@@ -504,6 +495,7 @@
 				);
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_FILE = "MyFramework/MyFramework-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/SIngleObjectPrelink_Demo-bllgcoioetqcmcfvgnmxwdkseync/Build/Products/Debug/libMyLibrary.a\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -521,6 +513,7 @@
 				GCC_PREFIX_HEADER = "MyFramework/MyFramework-Prefix.pch";
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_FILE = "MyFramework/MyFramework-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/SIngleObjectPrelink_Demo-bllgcoioetqcmcfvgnmxwdkseync/Build/Products/Debug/libMyLibrary.a\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -536,6 +529,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -545,6 +539,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyLibrary/MyLibrary-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -568,6 +563,7 @@
 				AB65B96E18FE91EE00115323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB65B99B18FE925700115323 /* Build configuration list for PBXNativeTarget "MyFramework" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +572,7 @@
 				AB65B99D18FE925700115323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB65B9BF18FE926800115323 /* Build configuration list for PBXNativeTarget "MyLibrary" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +581,7 @@
 				AB65B9C118FE926800115323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

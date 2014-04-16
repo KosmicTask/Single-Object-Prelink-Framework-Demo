@@ -14,9 +14,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    
+
+    // base class is linked into the framework
     MyBaseClass *baseClassInstance = [MyBaseClass new];
+    
+    // subclass starts life in the static library
     MySubClass *subClassInstance = [MySubClass new];
     
     (void)baseClassInstance;

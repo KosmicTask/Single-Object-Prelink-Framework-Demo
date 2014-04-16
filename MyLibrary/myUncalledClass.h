@@ -1,5 +1,5 @@
 //
-//  MyBaseClass.h
+//  myUncalledClass.h
 //  SIngleObjectPrelink Demo
 //
 //  Created by Jonathan Mitchell on 16/04/2014.
@@ -8,5 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyBaseClass : NSObject
+@interface myUncalledClass : NSObject
+
 @end
